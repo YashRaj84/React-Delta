@@ -1,6 +1,7 @@
 import './App.css'
 import Button from './Button.jsx'
 import Product from './Product.jsx'
+import ProductTab from './ProductTab.jsx'
 
 function Description() {
   return (
@@ -15,9 +16,7 @@ function App() {
       </h1>
       <Description/>
       <Button/>
-      <Product/>
-      <Product/>
-      <Product/>
+      <ProductTab/>
     </div>
   )
 }
