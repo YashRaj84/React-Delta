@@ -2,6 +2,7 @@ import './App.css'
 import Button from './Button.jsx'
 import Product from './Product.jsx'
 import ProductTab from './ProductTab.jsx'
+// import Activity from './Activity.jsx'
 
 function Description() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </h1>
       <Description/>
       <Button/>
+      {/* <Activity userName='Yash' textColor='blue' />
+      <Activity userName='Ashish' textColor='purple' />
+      <Activity userName='Manish' textColor='violet' /> */}
       <ProductTab/>
     </div>
   )
