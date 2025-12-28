@@ -12,15 +12,7 @@ function Description() {
 function App() {
   return (
     <div>
-      <h1>
-        Hello World.<br/>It's Delta 5.o Batch.
-      </h1>
-      <Description/>
-      <Button/>
-      {/* <Activity userName='Yash' textColor='blue' />
-      <Activity userName='Ashish' textColor='purple' />
-      <Activity userName='Manish' textColor='violet' /> */}
-      <ProductTab/>
+      <Button />
     </div>
   )
 }
