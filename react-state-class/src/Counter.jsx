@@ -1,5 +1,6 @@
+import {useState} from 'react';
 export default function Counter() {
-    let count = 0;
+    let count = useState(0);
 
     function increment() {
         count += 1;
