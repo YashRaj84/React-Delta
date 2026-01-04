@@ -1,31 +1,51 @@
 import { useState } from "react";
 export default function LudoBoard() {
     let [moves, setMoves] = useState({ blue: 0, yellow: 0, green: 0, red: 0 });
-    
+    let [arr, setArr] = useState(["No moves yet"]);
     let updateBlue = (color) => {
-        // console.log(`Blue moves = ${moves.blue}`);
         setMoves((prevMoves) => {
             return { ...prevMoves, blue: prevMoves.blue + 1 };
         });
+        setArr([...arr, "Blue moves"]);
+        console.log(arr);
     }
+
     let updateYellow = (color) => {
-        // console.log(`Yellow moves = ${moves.yellow}`);
         setMoves((prevMoves) => {
             return { ...prevMoves, yellow: prevMoves.yellow + 1 };
         });
+        setArr([...arr, "Yellow moves"]);
+        console.log(arr);
+    }
+
+    let updateGreen = (color) => {
+        setMoves((prevMoves) => {
+            return { ...prevMoves, green: prevMoves.green + 1 };
+        });
+        setArr([...arr, "Green moves"]);
+        console.log(arr);
+    }
+
+    let updateRed = (color) => {
+        setMoves((prevMoves) => {
+            return { ...prevMoves, red: prevMoves.red + 1 };
+        });
+        setArr([...arr, "Red moves"]);
+        console.log(arr);
     }
     return (
         <div>
             <h2>Ludo Board</h2>
+            <p>{arr[arr.length - 1]}</p>
             <div className="board">
                 <p>Blue Moves = {moves.blue}</p>
                 <button style={{ backgroundColor: 'blue' }} onClick={updateBlue}>+1</button>
                 <p>Yellow Moves = {moves.yellow}</p>
                 <button style={{ backgroundColor: 'yellow', color: 'black' }} onClick={updateYellow}>+1</button>
                 <p>Green Moves = {moves.green}</p>
-                <button style={{ backgroundColor: 'green'}}>+1</button>
+                <button style={{ backgroundColor: 'green'}} onClick={updateGreen}>+1</button>
                 <p>Red Moves = {moves.red}</p>
-                <button style={{ backgroundColor: 'red'}}>+1</button>
+                <button style={{ backgroundColor: 'red'}} onClick={updateRed}>+1</button>
             </div>
         </div>
     )
