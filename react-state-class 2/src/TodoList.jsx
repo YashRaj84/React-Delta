@@ -10,13 +10,15 @@ export default function TodoList() {
   }
   let updateTask = (e) => {
     setNewTodo(e.target.value);
-    
+  }
+  let deleteTask = (id) => {
+    setTodos((prevTodos) => todos.filter((prevTodos) => prevTodos.id !== id));
   }
   return (
     <div>
       <input placeholder="New todo" 
       value={newTodo} 
-      onChange={updateTask}></input>
+      onChange={updateTask}/>
       <br />
       <br />
       <button onClick={addTask}>Add Task</button>
@@ -28,11 +30,14 @@ export default function TodoList() {
       <ul>
         {
           todos.map((todo) => (
-            <li key={todo.id}>{todo.task}</li>
+            <li key={todo.id}>
+              <span>{todo.task}</span>
+              &nbsp; &nbsp;
+              <button onClick={() => deleteTask(todo.id)}>Delete</button>
+            </li>
           ))
         }
       </ul>
-
     </div>
   )
 }
